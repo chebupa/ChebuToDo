@@ -9,7 +9,15 @@ export const Button = observer(() => {
   const { addToDo } = listStore
   const { inputValue } = inputFieldStore
 
+  const handleClick = () => {
+    if (inputValue) addToDo(inputValue)
+    else console.log('Empty todo')
+  }
+
   return (
-    <button className={ styles.Button } onClick={ () => addToDo(inputValue) }> Add </button>
+    <button
+      className={ styles.Button }
+      onClick={ () => handleClick() }
+    > Add </button>
   )
 })

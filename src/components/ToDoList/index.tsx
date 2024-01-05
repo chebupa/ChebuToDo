@@ -5,12 +5,18 @@ import listStore from "../../stores/list-store"
 
 
 export const ToDoList = observer(() => {
-  const { list } = listStore
+  const { list, removeToDo } = listStore
 
   return (
     <ul className={ styles.ToDoList }>
       {
-        list.map(todo => <li  key={ list.indexOf(todo) }> { todo } </li>)
+        list.map(todo => <li  key={ list.indexOf(todo) }>
+          <input
+            type='checkbox'
+            onClick={ () => removeToDo(list.indexOf(todo)) }
+          />
+          <p> { todo } </p>
+        </li>)
       }
     </ul>
   )

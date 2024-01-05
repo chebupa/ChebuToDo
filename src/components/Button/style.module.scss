@@ -4,8 +4,17 @@
 
   font-size: 1.5rem;
 
-  border: 0.1rem solid rgba(0, 0, 0, 0.26);
+  color: white;
+  background: rgb(62, 113, 253);
+
+  border: none;
   border-radius: 0.5rem;
 
   cursor: pointer;
+
+  transition: all 0.1s;
+
+  &:active {
+    filter: brightness(0.75);
+  }
 }
