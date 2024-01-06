@@ -11,6 +11,7 @@ export const InputField = observer(() => {
     <input
       className={ styles.InputField }
       onChange={ (e) => setInputValue(e.target.value) }
+
     />
   )
 })

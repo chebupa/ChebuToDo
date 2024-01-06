@@ -3,6 +3,7 @@ import { makeAutoObservable } from "mobx"
 
 class listStore {
     list: string[] = []
+    count: number = -1
 
     constructor() {
         makeAutoObservable(this)
@@ -10,9 +11,12 @@ class listStore {
 
     addToDo = (value: string) => {
         this.list.push(value)
+        console.log(this.list)
+        this.count++
+        console.log(this.count)
     }
-    removeToDo = (toDoId: number) => {
-        this.list.splice(toDoId, 1)
+    removeToDo = (index: number) => {
+        this.list.splice(index, 1)
     }
 }
 

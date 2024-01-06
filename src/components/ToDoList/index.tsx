@@ -10,11 +10,10 @@ export const ToDoList = observer(() => {
   return (
     <ul className={ styles.ToDoList }>
       {
-        list.map(todo => <li  key={ list.indexOf(todo) }>
-          <input
-            type='checkbox'
-            onClick={ () => removeToDo(list.indexOf(todo)) }
-          />
+        list.map((todo, key) => <li key={ key }>
+          <div className={ styles.wrapper }>
+            <button onClick={ () => removeToDo(key) }> X </button>
+          </div>
           <p> { todo } </p>
         </li>)
       }

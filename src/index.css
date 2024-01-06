@@ -55,4 +55,13 @@ ul {
 
 html {
 	padding: 1rem;
+	overflow: hidden !important;
+}
+html, body {
+    min-height: 100% !important;
+    height: 100%;
+}
+
+#root {
+	height: 100vh;
 }
